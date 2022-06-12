@@ -38,4 +38,29 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>Unit conversion</label>
+      <input class="form-control" (input)="onMilesChange ($any($event.target).value)" />
+      <div class="control">
+        <label class="checkbox">
+          <input (change)="onChangeKmToMeters()" type="checkbox" />
+          Kilometers to meters
+        </label>
+      </div>
+    </div>
+    <div class="col">
+      <label>
+        <b *ngIf="miles">Kilometers</b>
+        <b *ngIf="miles">Kilometers</b>
+        <b *ngIf="miles">Kilometers</b>
+        <b *ngIf="miles">Kilometers</b>
+      </label>
+      <div *ngIf="miles">
+        {{ miles | convert: 'm' }}
+      </div>
+    </div>
+  </div>
+  {{ targetUnits }}
 </div>

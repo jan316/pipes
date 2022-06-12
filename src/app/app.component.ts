@@ -9,6 +9,8 @@ export class AppComponent {
   name: string = '';
   date: string = '';
   amount: any;
+  targetUnits: string = 'start'
+  miles: any ;
 
   onNameChange(value: string) {
     this.name = value;
@@ -22,4 +24,11 @@ export class AppComponent {
     this.amount = parseFloat(value);
   }
 
+  onMilesChange(value: any) {
+    this.miles = parseFloat(value);
+  }
+
+  onChangeKmToMeters() {
+    this.targetUnits = 'm';
+  }
 }
